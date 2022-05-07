@@ -10,7 +10,7 @@ body {
 
 h1 {
   margin: 40px auto;
-  color: #73d1f0;
+  color: #671ada;
   text-align: center;
 }
 
@@ -26,7 +26,7 @@ li {
 }
 
 li h4 {
-  color: #73d1f0;
+  color: #671ada;
   margin: 0;
   text-transform: capitalize;
 }
@@ -42,38 +42,61 @@ footer {
   margin-top: 60px;
 }
 
-form {
+.new-item-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   max-width: 960px;
   margin: 0 auto;
   text-align: center;
 }
-
-label {
+.new-item-form .field:not(.field-select) {
+  background-color: rgb(222, 177, 142);
+  display: inline-block;
+  padding: 0 20px;
+  margin: 0 10px;
+}
+.new-item-form .field:not(.field-select):last-of-type {
+  padding-bottom: 2rem;
+}
+.new-item-form .field:not(.field-select) label {
   display: block;
   font-weight: bold;
   font-size: 0.8em;
   color: #333;
   margin: 16px 0 6px;
 }
-
-input, select {
+.new-item-form .field:not(.field-select) input, .new-item-form .field:not(.field-select) select {
+  min-width: 300px;
   padding: 6px;
   border: 1px solid #e1e1e1;
   border-radius: 4px;
 }
-
-.field {
+.new-item-form .field-select {
+  background-color: rgb(222, 177, 142);
   display: inline-block;
-  margin: 0 10px;
+  padding: 0 27px;
 }
-
-button {
+.new-item-form .field-select label {
+  display: block;
+  font-weight: bold;
+  font-size: 0.8em;
+  color: #333;
+  margin: 16px 0 6px;
+}
+.new-item-form .field-select select {
+  min-width: 300px;
+  padding: 6px;
+  border: 1px solid #e1e1e1;
+  border-radius: 4px;
+}
+.new-item-form button {
   color: white;
   border: 0;
-  background: #73d1f0;
+  background: #671ada;
   padding: 6px;
-  min-width: 80px;
-  border-radius: 4px;
+  max-width: 100px;
 }
 
 footer a {

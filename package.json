@@ -1,5 +1,13 @@
 {
+  "name": "ts-net-ninja",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sandbox.js",
+  "scripts": {
+    "start": "echo \"Error: no test specified\" && exit 1"
+  },
   "devDependencies": {
-    "sass": "^1.51.0"
+    "sass": "^1.51.0",
+    "typescript": "^4.6.4"
   }
 }
