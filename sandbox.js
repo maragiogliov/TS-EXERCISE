@@ -39,3 +39,4 @@ ninjaFour = {
     beltColor: 'red'
 };
 console.log(ninjaFour);
+///////////// Better Workflow & tsconfig //////////////////

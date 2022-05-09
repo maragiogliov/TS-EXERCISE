@@ -65,3 +65,5 @@ ninjaFour = {
 }
 
 console.log(ninjaFour)
+
+///////////// Better Workflow & tsconfig //////////////////
