@@ -10,7 +10,7 @@ body {
 
 h1 {
   margin: 40px auto;
-  color: #608b4c;
+  color: #80e316;
   text-align: center;
 }
 
@@ -26,7 +26,7 @@ li {
 }
 
 li h4 {
-  color: #608b4c;
+  color: #80e316;
   margin: 0;
   text-transform: capitalize;
 }
@@ -94,7 +94,7 @@ footer {
 .new-item-form button {
   color: white;
   border: 0;
-  background: #608b4c;
+  background: #80e316;
   padding: 6px;
   max-width: 100px;
 }
