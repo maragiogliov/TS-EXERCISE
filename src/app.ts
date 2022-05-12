@@ -1,3 +1,5 @@
+import{ invoice } from './classes/invoice.js'
+
 // The DOM & Type Casting
 
 // const anchor = document.querySelector('a')!;
@@ -29,7 +31,7 @@ form.addEventListener('submit',(e)=>{
     );
 })
 
-// Classes: A blueprint for an object
+////////////////////////////////////////////////////// Classes: A blueprint for an object 01
 
 // class invoice {
 //     public client:string;
@@ -47,7 +49,8 @@ form.addEventListener('submit',(e)=>{
 //     };
 // };
 
-// and that is a class with a format method added, now if we want to instantiate that class and create an object based on it we:
+// and that is a class with a format method added, now if we want to instantiate that class
+// and create an object based on it we:
 
 // const invOne = new invoice('mario','work on the mario website', 450);
 // const invTwo = new invoice('luigi','work on the luigi website', 700);
@@ -59,42 +62,45 @@ form.addEventListener('submit',(e)=>{
 // let invoices:invoice[] = [] // only objects that are created with the class type invoice can be added to the array
 // invoices.push(invOne);
 // invoices.push(invTwo);
+// console.log(invoices)
 
 // invoices.forEach(inv =>{
 //     console.log(inv.client, inv.details, inv.amount, inv.format());
 // });
 
 
-// console.log(invoices)
 
-// Now by default when we create objects with this class, all the properties are public, meaning whenever we create an instance of that class we can access and modify it. For example:
+// Now by default when we create objects with this class, all the properties are public,
+// meaning whenever we create an instance of that class we can access and modify it. For example:
 
 // invOne.client = 'yoshi';
 // invTwo.amount = 5;
 
 // console.log(invOne,invTwo);
 
-// to prevent this we can applying 'access modifiers' in the class (line 35 to 37) we have three types: public, private and readonly. 
+// to prevent this we can applying 'access modifiers' in the class (line 35 to 37) we have three types:
+// public, private and readonly. 
 
 // if we use acces modifiers we can change the structure of our class / constructure:
 
-// Classes: A blueprint for an object
 
-class invoice {
-    // public client:string;
-    // public details:string;
-    // public amount:number;
+// //////////////////////////////////////////////////////////////// Classes: A blueprint for an object 2
 
-    constructor (
-        readonly client : string,
-        public details : string,
-        public amount : number,
-    ){};
+// class invoice {
+//     // public client:string;
+//     // public details:string;
+//     // public amount:number;
 
-    format(){
-        return `${this.client} owes £${this.amount} for ${this.details}`;
-    };
-};
+//     constructor (
+//         readonly client : string,
+//         public details : string,
+//         public amount : number,
+//     ){};
+
+//     format(){
+//         return `${this.client} owes £${this.amount} for ${this.details}`;
+//     };
+// };
 
 // and that is a class with a format method added, now if we want to instantiate that class and create an object based on it we:
 
@@ -109,9 +115,43 @@ let invoices:invoice[] = [] // only objects that are created with the class type
 invoices.push(invOne);
 invoices.push(invTwo);
 
+console.log(invoices)
+
 invoices.forEach(inv =>{
     console.log(inv.client, inv.details, inv.amount, inv.format());
 });
 
 
-console.log(invoices)
+// Interfaces
+// Enforce an specific type structure within classes or objects. Similar to Classes.
+
+interface isPerson{
+    name:string,
+    age:number,
+    speak(a:string):void
+    spend(a:number):number
+};
+
+const me: isPerson = {
+    name:'shaun',
+    age:30,
+    speak(text:string):void{
+        console.log(text)
+    },
+    spend(amount:number):number{
+        console.log('I spend ', amount)
+        return amount
+    }
+}
+console.log(me)
+
+// Now we can have multiple diferent objects with the type of person, that it implement isPerson Interface
+// New objects with diferent value and methods
+// We can pass it as the parameter of a function()
+// Example:
+
+const greetPerson = (person:isPerson)=>{
+        console.log('hello', person.age)
+}
+// greetPerson({name:'shaun'}) // Doesn't allow me because it need to match isPerson Interface
+greetPerson(me) // If I pass me, allows me because me:isPerson object, where the data is.
