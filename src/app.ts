@@ -1,4 +1,5 @@
 import{ invoice } from './classes/invoice.js'
+import { listTemplate } from './classes/listTemplate.js';
 import{ payment } from './classes/payment.js'
 import { HasFormatter } from './Interfaces/HasFormatter.js';
 
@@ -38,6 +39,10 @@ const tofrom = document.querySelector('#tofrom') as HTMLInputElement;
 const details = document.querySelector('#details') as HTMLInputElement;
 const amount = document.querySelector('#amount') as HTMLInputElement;
 
+// list template instance
+const ul = document.querySelector('ul')!;
+const list = new listTemplate(ul);
+
 form.addEventListener('submit',(e)=>{
     e.preventDefault();
     
@@ -49,8 +54,9 @@ form.addEventListener('submit',(e)=>{
         doc = new payment(tofrom.value, details.value, amount.valueAsNumber)
     }
 
+    list.render(doc, type.value,'start' )
 
-    console.log(doc);
+   
 })
 
 ////////////////////////////////////////////////////// Classes: A blueprint for an object 01

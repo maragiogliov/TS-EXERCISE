@@ -10,7 +10,7 @@ body {
 
 h1 {
   margin: 40px auto;
-  color: #80e316;
+  color: hsl(270deg, 48%, 53%);
   text-align: center;
 }
 
@@ -26,7 +26,7 @@ li {
 }
 
 li h4 {
-  color: #80e316;
+  color: hsl(270deg, 48%, 53%);
   margin: 0;
   text-transform: capitalize;
 }
@@ -50,9 +50,14 @@ footer {
   max-width: 960px;
   margin: 0 auto;
   text-align: center;
+  /* 
+  ========================
+        BUTTON TWO
+  ========================
+  */
 }
 .new-item-form .field:not(.field-select) {
-  background-color: rgb(222, 177, 142);
+  background-color: rgba(68, 66, 64, 0.416);
   display: inline-block;
   padding: 0 20px;
   margin: 0 10px;
@@ -74,7 +79,7 @@ footer {
   border-radius: 4px;
 }
 .new-item-form .field-select {
-  background-color: rgb(222, 177, 142);
+  background-color: rgba(68, 66, 64, 0.416);
   display: inline-block;
   padding: 0 27px;
 }
@@ -94,9 +99,57 @@ footer {
 .new-item-form button {
   color: white;
   border: 0;
-  background: #80e316;
-  padding: 6px;
+  background: hsl(270deg, 48%, 53%);
+  padding: 16px;
+  min-width: 100px;
   max-width: 100px;
+  margin-top: 2rem;
+  border-radius: 150px;
+  cursor: pointer;
+}
+.new-item-form .btn-two {
+  color: #FFF;
+  transition: all 0.5s;
+  position: relative;
+}
+.new-item-form .btn-two span {
+  z-index: 2;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.new-item-form .btn-two::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: all 0.5s;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.new-item-form .btn-two::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: all 0.5s;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.new-item-form .btn-two:hover::before {
+  transform: rotate(-45deg);
+  background-color: rgba(255, 255, 255, 0);
+}
+.new-item-form .btn-two:hover::after {
+  transform: rotate(45deg);
+  background-color: rgba(255, 255, 255, 0);
 }
 
 footer a {
