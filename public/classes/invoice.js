@@ -1,4 +1,3 @@
-//////////////////////////////////////////////////////////////// Classes: A blueprint for an object 3 using modules
 export class invoice {
     constructor(client, details, amount) {
         this.client = client;

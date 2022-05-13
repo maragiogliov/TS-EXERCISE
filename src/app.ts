@@ -1,4 +1,22 @@
 import{ invoice } from './classes/invoice.js'
+import{ payment } from './classes/payment.js'
+import { HasFormatter } from './Interfaces/HasFormatter.js';
+
+/// From Interfaces and Classes 
+
+// let docOne : HasFormatter;
+// let docTwo : HasFormatter;
+
+// docOne = new invoice ('mario', 'web work', 520)
+// docTwo = new payment ('luigi', 'landing page', 400)
+
+// let docs : HasFormatter[] = [];
+// docs.push(docOne);
+// docs.push(docTwo);
+
+// console.log(docs)
+
+/// Now let's put this on practice
 
 // The DOM & Type Casting
 
@@ -22,13 +40,17 @@ const amount = document.querySelector('#amount') as HTMLInputElement;
 
 form.addEventListener('submit',(e)=>{
     e.preventDefault();
+    
+    let doc : HasFormatter;
 
-    console.log(
-        type.value,
-        tofrom.value,
-        details.value,
-        amount.valueAsNumber
-    );
+    if(type.value === 'invoice'){
+        doc = new invoice(tofrom.value, details.value, amount.valueAsNumber)
+    }else{
+        doc = new payment(tofrom.value, details.value, amount.valueAsNumber)
+    }
+
+
+    console.log(doc);
 })
 
 ////////////////////////////////////////////////////// Classes: A blueprint for an object 01
@@ -155,3 +177,5 @@ const greetPerson = (person:isPerson)=>{
 }
 // greetPerson({name:'shaun'}) // Doesn't allow me because it need to match isPerson Interface
 greetPerson(me) // If I pass me, allows me because me:isPerson object, where the data is.
+
+// Interfaces with Classes
